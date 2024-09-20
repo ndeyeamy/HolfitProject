@@ -1,0 +1,17 @@
+{
+  "name": "holfit-mobile",
+  "version": "1.0.0",
+  "description": "Mobile app for Holfit",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios"
+  },
+  "dependencies": {
+    "react": "17.0.1",
+    "react-native": "0.64.1",
+    "react-navigation": "^4.4.4",
+    "expo": "^42.0.0"
+  }
+}
+
