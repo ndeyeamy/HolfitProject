@@ -1,11 +1,13 @@
+// frontend/src/components/Footer.js
 import React from 'react';
 
-const Footer = () => {
+function Footer() {
   return (
-    <footer>
-      <p>© 2024 Holfit, All Rights Reserved.</p>
+    <footer className="footer">
+      <p>&copy; 2024 Holfit. All rights reserved.</p>
     </footer>
   );
-};
+}
 
 export default Footer;
+
