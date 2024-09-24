@@ -1,51 +1,44 @@
 // frontend/src/App.js
 import React from 'react';
-import './styles/App.css'; // Assure-toi d'avoir un fichier de styles correspondant
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+// Import des pages
+import HomePage from './pages/HomePage';
+import WorkoutsPage from './pages/WorkoutsPage';
+import NutritionPage from './pages/NutritionPage';
+import CommunityPage from './pages/CommunityPage';
+import ContactPage from './pages/ContactPage';
+
+// Import des composants
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+// Import des styles globaux
+import './styles/App.css';
 
 function App() {
   return (
-    <div className="app-container">
-      <header className="header">
-        <h1>Holfit - Your Fitness Journey Starts Here</h1>
-        <nav className="navbar">
-          <a href="#">Home</a>
-          <a href="#">Workouts</a>
-          <a href="#">Nutrition</a>
-          <a href="#">Community</a>
-          <a href="#">Contact</a>
-        </nav>
-      </header>
+    <Router>
+      <div className="app-container">
+        {/* Barre de navigation */}
+        <Navbar />
 
-      <main className="main-content">
-        <section className="intro-section">
-          <h2>Welcome to Holfit</h2>
-          <p>Your all-in-one platform for fitness, health, and wellness. Discover personalized workouts, connect with a community of like-minded individuals, and track your progress with ease.</p>
-          <button className="cta-button">Get Started</button>
-        </section>
+        {/* Contenu principal */}
+        <main className="main-content">
+          <Switch>
+            {/* Définition des routes pour chaque page */}
+            <Route exact path="/" component={HomePage} />
+            <Route path="/workouts" component={WorkoutsPage} />
+            <Route path="/nutrition" component={NutritionPage} />
+            <Route path="/community" component={CommunityPage} />
+            <Route path="/contact" component={ContactPage} />
+          </Switch>
+        </main>
 
-        <section className="features-section">
-          <h2>Why Choose Holfit?</h2>
-          <div className="features">
-            <div className="feature-card">
-              <h3>Personalized Workouts</h3>
-              <p>Get workout plans tailored to your fitness level and goals.</p>
-            </div>
-            <div className="feature-card">
-              <h3>Track Your Progress</h3>
-              <p>Monitor your fitness journey with our intuitive dashboard.</p>
-            </div>
-            <div className="feature-card">
-              <h3>Join the Community</h3>
-              <p>Connect with others, join groups, and stay motivated.</p>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer className="footer">
-        <p>&copy; 2024 Holfit. All rights reserved.</p>
-      </footer>
-    </div>
+        {/* Pied de page */}
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
