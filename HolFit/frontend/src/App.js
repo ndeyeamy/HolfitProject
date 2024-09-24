@@ -33,6 +33,8 @@ function App() {
             <Route path="/community" component={CommunityPage} />
             <Route path="/contact" component={ContactPage} />
           </Switch>
+	   <h1>Bienvenue sur Holfit</h1>
+           <img src="/holfit.png" alt="Holfit Illustration" />
         </main>
 
         {/* Pied de page */}
